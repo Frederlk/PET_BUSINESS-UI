@@ -2,13 +2,48 @@
 // Снипет (HTML): btn
 
 .button {
-	display: inline-flex;
-	padding: 0px 0px;
-	@media (any-hover: hover) {
-		&:hover {
-		}
-	}
-	&._fw {
-		width: 100%;
-	}
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 0px rem(30);
+    background-color: #007397;
+    height: rem(56);
+    font-size: rem(16);
+    line-height: math.div(24, 16);
+    overflow: hidden;
+    min-width: rem(270);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: #ffffff;
+    position: relative;
+    &::after {
+        content: "";
+        position: absolute;
+        width: 0;
+        height: 100%;
+        left: 50%;
+        transition: all 0.5s ease 0s;
+        top: 0;
+        background-color: #3c3f3d;
+    }
+    span {
+        position: relative;
+        z-index: 2;
+    }
+    &:hover {
+        &::after {
+            left: 0;
+            width: 100%;
+        }
+    }
+    @media (max-width: $mobile) {
+        display: flex;
+        align-items: center;
+        font-size: rem(14);
+        line-height: math.div(18, 14);
+        max-width: 100%;
+        justify-content: center;
+    }
 }

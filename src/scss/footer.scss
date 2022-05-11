@@ -1,3 +1,57 @@
-//====================================================================================================
+.footer {
+    &__container {
+        display: flex;
+        @media (min-width: $mobileSmall) {
+            min-height: rem(125);
+            justify-content: space-between;
+            align-items: center;
+        }
+        @media (max-width: $mobileSmall) {
+            text-align: center;
+            padding: rem(30) 0px;
+            flex-wrap: wrap;
+        }
+    }
+
+    &__column {
+        @media (max-width: $mobileSmall) {
+            flex: 1 1 100%;
+            &:not(:last-child) {
+                margin-bottom: rem(20);
+            }
+        }
+    }
+
+    &__copy {
+        font-size: rem(12);
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        color: #646667;
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+
+    &__link {
+        font-size: rem(12);
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        color: #646667;
+        @media (min-width: $mobileSmall) {
+            margin: 0px 0px 0px rem(30);
+        }
+        @media (max-width: $mobileSmall) {
+            display: block;
+            &:not(:last-child) {
+                margin: 0px 0px rem(20) 0px;
+            }
+        }
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+}
 
 //====================================================================================================
