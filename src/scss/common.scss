@@ -1,1 +1,33 @@
-// Заголовки, общие БЄМ блоки и проче...
+.pts {
+    font-family: "PT Serif";
+}
+
+.bluebg {
+    position: relative;
+    overflow: hidden;
+    &::after {
+        content: "";
+        position: absolute;
+        transform: rotate(19deg);
+        width: rem(412);
+        height: 140%;
+        top: rem(-100);
+        left: rem(-70);
+        background-image: linear-gradient(198.42910766601562deg, #007397 5%, rgba(0, 115, 151, 0) 94%);
+        @media (max-width: $tablet) {
+            @include adaptiveValue("left", -250, -350, 991.98, 479.98, 1);
+        }
+    }
+}
+.title {
+    @extend .pts;
+    @include adaptiveValue("font-size", 32, 28, 1170, 991.98, 1);
+    line-height: math.div(48, 32);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+    color: #3c3f3d;
+    @media (max-width: $mobile) {
+        text-align: center;
+    }
+}
